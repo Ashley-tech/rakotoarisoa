@@ -13,8 +13,6 @@ class CreateComptesTable extends Migration
             $table->id('id_compte');
             $table->string('nom');
             $table->string('prenom');
-            $table->string('ville');
-            $table->string('region');
             $table->string('mel')->unique();
             $table->date('naissance');
             $table->integer('age');

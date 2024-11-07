@@ -13,7 +13,6 @@ return new class extends Migration
             $table->string('titre_soiree');
             $table->date('date_soiree');
             $table->time('heure');
-            $table->string('ville_soiree');
             $table->boolean('payante');
             $table->decimal('prix_place', 8, 2)->nullable();
             $table->integer('nbre_places_max');
