@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Soiree;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class SoireeController extends Controller
 {

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Proposition;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class PropositionController extends Controller
 {
