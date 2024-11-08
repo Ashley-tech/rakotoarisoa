@@ -9,7 +9,7 @@ class CreateComptesTable extends Migration
 {
     public function up()
     {
-        Schema::create('comptes', function (Blueprint $table) {
+        Schema::create('compte', function (Blueprint $table) {
             $table->id('id_compte');
             $table->string('nom');
             $table->string('prenom');
@@ -17,7 +17,7 @@ class CreateComptesTable extends Migration
             $table->date('naissance');
             $table->integer('age');
             $table->string('mdp');
-            $table->foreignId('id_adresse')->constrained('adresses');
+            $table->foreignId('id_adresse')->constrained('adresse','id_adresse')->onDelete('cascade');
             $table->timestamps();
         });
     }

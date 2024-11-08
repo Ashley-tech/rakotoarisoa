@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('compte_interet', function (Blueprint $table) {
-            $table->foreignId('id_compte')->constrained('comptes');
-            $table->foreignId('id_interet')->constrained('centre_interets');
+            $table->foreignId('id_compte')->constrained('compte','id_compte');
+            $table->foreignId('id_interet')->constrained('centre_interets','id_interet');
             $table->timestamps();
         });
     }

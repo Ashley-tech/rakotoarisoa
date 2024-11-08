@@ -9,15 +9,16 @@ class CreateAdressesTable extends Migration
 {
     public function up()
     {
-        Schema::create('adresses', function (Blueprint $table) {
-            $table->id('id_adresse');
+        Schema::create('adresse', function (Blueprint $table) {
+            $table->id('id_adresse'); // Définit id_adresse comme clé primaire
             $table->string('numero');
             $table->string('rue');
-            $table->string('ville');
             $table->string('cp');
+            $table->string('ville');
             $table->string('region');
             $table->timestamps();
         });
+        
     }
 
     public function down()

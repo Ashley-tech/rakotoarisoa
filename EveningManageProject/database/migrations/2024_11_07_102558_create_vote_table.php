@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('vote', function (Blueprint $table) {
-            $table->foreignId('id_participation')->constrained('participations');
-            $table->foreignId('id_proposition')->constrained('propositions');
+            $table->foreignId('id_participation')->constrained('participation','id_participation');
+            $table->foreignId('id_proposition')->constrained('proposition','id_proposition');
             $table->string('reponse');
             $table->timestamps();
         });

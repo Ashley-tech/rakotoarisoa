@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id('id_categorie');
             $table->string('nom_categorie');
             $table->string('type_categorie');
-            $table->foreignId('id_interet')->constrained('centre_interets');
+            $table->foreignId('id_interet')->constrained('centre_interets','id_interet');
             $table->timestamps();
         });
     }
