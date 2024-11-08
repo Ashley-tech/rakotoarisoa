@@ -9,7 +9,7 @@ class Soiree extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['titre_soiree','date_soiree','heure','payante','prix_place','nbre_places_max'];
+    protected $fillable = ['titre_soiree','date_soiree','heure','payante','prix_place','nbre_places_max','date_publication'];
 
     public function propositions() {
         return $this->hasMany(Proposition::class);
