@@ -6,9 +6,17 @@ use App\Models\Soiree;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
+use App\Services\SoireeService;
 
 class SoireeController extends Controller
 {
+    protected $soireeService;
+
+    public function __construct(SoireeService $soireeService)
+    {
+        $this->soireeService = $soireeService;
+    }
+    
     /**
      * Display a listing of the resource.
      */
@@ -61,8 +69,9 @@ class SoireeController extends Controller
         //
     }
 
-    public function refreshSoireesDisponibles(): void
+    public function refreshSoireesDisponibles()
     {
-        DB::statement("REFRESH MATERIALIZED VIEW vue_soirees_disponibles");
+        $this->soireeService->refreshSoireesDisponibles();
+        return response()->json(['message' => 'Vue soirees_disponibles rafraîchie avec succès.']);
     }
 }
