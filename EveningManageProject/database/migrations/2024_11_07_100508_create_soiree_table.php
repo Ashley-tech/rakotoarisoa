@@ -16,6 +16,7 @@ return new class extends Migration
             $table->boolean('payante');
             $table->decimal('prix_place', 8, 2)->nullable();
             $table->integer('nbre_places_max');
+            $table->date('date_publication');
             $table->foreignId('id_adresse')->constrained('adresse','id_adresse')->onDelete('cascade');
             $table->foreignId('id_interet')->constrained('centre_interets','id_interet')->onDelete('cascade');
             $table->foreignId('id_compte')->constrained('compte','id_compte')->onDelete('cascade');
