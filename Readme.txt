@@ -12,8 +12,10 @@ Dans php.ini, décommenter :
 ;extension=pdo_pgsql
 ;extension=pgsql
 (Les 2 derniers permettent de débloquer la création des tables de la base de données)
+;date.timezone= (Puis lui affecter la valeur "Europe/Paris")
 
 Pour créer ces tables : php artisan migrate
+-php artisan key:generate (Pour générer une clé -> NECESSAIRE)
 
 -php artsan serve (Pour lancer le serveur)
 
