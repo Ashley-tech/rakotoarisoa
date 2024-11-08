@@ -24,6 +24,18 @@ class SoireeController extends Controller
         //
     }
 
+    public function afficherSoirees($id) {
+        /*$soirees = Soiree::when($ville, function ($query, $ville) {
+            return $query->where('ville_soiree', $ville);
+        })
+        ->when($payante !== null, function ($query, $payante) {
+            return $query->where('payante', $payante);
+        })
+        ->get();
+
+        return response()->json($soirees);*/
+    }
+
     /**
      * Display the specified resource.
      */
