@@ -36,7 +36,7 @@
                 color: black;
                 width: 50%;
                 padding-left: 6px;
-                height: 50%;
+                height: 80%;
             }
 
             table {
@@ -48,7 +48,7 @@
                 color: #FFFF00;
                 width: 100%;
                 font-size: 25px;
-                font-family: Calibri;
+                font-family: Arial;
             }
         </style>
     </head>
@@ -57,25 +57,53 @@
             <h2>Evening Manage Project</h2>
             <table>
                 <tr>
-                    <th colspan="2">Connexion :</th>
+                    <th colspan="2">Inscription :</th>
                 </tr>
                 <tr>
-                    <th>E-mail :*</th>
+                    <th>Nom* :</th>
+                    <td><input type='text' name='nom' placeholder="Nom   " /><td>
+                </tr>
+                <tr>
+                    <th>Prénom* :</th>
+                    <td><input type='text' name='prenom' placeholder="Prénom" /><td>
+                </tr>
+                <tr>
+                    <th>Rue <i>(ne sera pas divulguée)</i> :</th>
+                    <td><input type='text' name='rue' /><td>
+                </tr>
+                <tr>
+                    <th>Numéro <i>(ne sera pas divulguée)</i> :</th>
+                    <td><input type='text' name='num' /><td>
+                </tr>
+                <tr>
+                    <th>Ville* :</th>
+                    <td><input type='text' name='rue' /><td>
+                </tr>
+                <tr>
+                    <th>Naissance* :</th>
+                    <td><input type='date' name='nais' /><td>
+                </tr>
+                <tr>
+                    <th>E-mail* :</th>
                     <td><input type='text' name='mel' placeholder="E-mail" /><td>
                 </tr>
                 <tr>
-                    <th>Mot de passe :*</th>
+                    <th>Mot de passe* :</th>
                     <td><input type='password' name='pwd' placeholder="Mot de passe" /><td>
                 </tr>
                 <tr>
-                    <td><button>Connexion</button></td>
-                    <td><button onclick="inscription()">Inscription</button></td>
+                    <th>Reconfirmation du mot de passe* :</th>
+                    <td><input type='password' name='pwd2' placeholder="Mot de passe" /><td>
+                </tr>
+                <tr>
+                    <td><button>Continuer</button></td>
+                    <td><button onclick="retourner()">Retour</button></td>
                 </tr>
             </table>
         </div>
         <script>
-            function inscription(){
-                location.href = '/inscription'
+            function retourner(){
+                location.href = '/'
             }
         </script>
     </body>
