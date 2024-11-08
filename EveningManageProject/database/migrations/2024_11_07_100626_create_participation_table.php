@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreignId('id_compte')->constrained('compte','id_compte')->onDelete('cascade');
             $table->timestamps();
         });
-        DB::statement('ALTER TABLE your_table ADD CONSTRAINT check_note_range CHECK (note >= 0 AND note <= 20)');
+        DB::statement('ALTER TABLE participation ADD CONSTRAINT check_note_range CHECK (note >= 0 AND note <= 20)');
     }
 
     /**

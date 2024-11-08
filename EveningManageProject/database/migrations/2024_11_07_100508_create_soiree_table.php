@@ -8,7 +8,7 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('soirees', function (Blueprint $table) {
+        Schema::create('soiree', function (Blueprint $table) {
             $table->id('id_soiree');
             $table->string('titre_soiree');
             $table->date('date_soiree');
