@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Soiree;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 class SoireeController extends Controller
 {
@@ -58,5 +59,10 @@ class SoireeController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function refreshSoireesDisponibles(): void
+    {
+        DB::statement("REFRESH MATERIALIZED VIEW vue_soirees_disponibles");
     }
 }

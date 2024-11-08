@@ -33,9 +33,4 @@ return new class extends Migration
     {
         DB::statement("DROP MATERIALIZED VIEW IF EXISTS vue_soirees_disponibles");
     }
-
-    public function refreshSoireesDisponibles(): void
-    {
-        DB::statement("REFRESH MATERIALIZED VIEW vue_soirees_disponibles");
-    }
 };
