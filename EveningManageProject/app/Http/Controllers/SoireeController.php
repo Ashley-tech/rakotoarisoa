@@ -16,13 +16,23 @@ class SoireeController extends Controller
     {
         $this->soireeService = $soireeService;
     }
-    
+
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $compte = $request->user(); // Supposons que l'utilisateur est connecté
+        $soireesDisponibles = Soiree::with(['adresse', 'participants'])
+            ->withCount('participants')
+            ->whereHas('adresse', function ($query) use ($compte) {
+                $query->where('ville', $compte->adresse->ville);
+            })
+            ->having('participants_count', '<', DB::raw('nbre_places_max'))
+            ->orderBy('date_publication')
+            ->get(['id_soiree', 'titre_soiree', 'date_soiree', 'heure', 'id_adresse', 'nbre_places_max']);
+
+        return view('soirees.index', compact('soireesDisponibles'));
     }
 
     /**
@@ -34,6 +44,9 @@ class SoireeController extends Controller
     }
 
     public function afficherSoirees($id) {
+        $soirees = Soiree::all();
+        $soirees->load('participants');
+
         /*$soirees = Soiree::when($ville, function ($query, $ville) {
             return $query->where('ville_soiree', $ville);
         })

@@ -13,6 +13,6 @@ class Compte extends Model
 
     public function adresse()
     {
-        return $this->belongsTo(Adresse::class,'id_adresse');
+        return $this->belongsTo(Adresse::class,'id_adresse','id_adresse');
     }
 }
